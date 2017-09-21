@@ -54,7 +54,8 @@ namespace lab2
 				in.clear();
 				in.ignore();
 			}
-		} while (!in.eof());
+		}
+		while (!in.eof());
 		out << setw(5) << left << "max:"
 			<< setw(15) << internal << setprecision(3) << showpos << showpoint << fixed << max << endl;
 	}
