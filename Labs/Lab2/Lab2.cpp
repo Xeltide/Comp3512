@@ -9,17 +9,17 @@ namespace lab2 {
 	void PrintIntegers(std::istream& in, std::ostream& out) {
 		int number;
 		out << setw(12) << right << "oct"
-			<< setw(11) << right << "dec"
-			<< setw(10) << right << "hex" << std::endl;
-		out << setw(12) << right << "------------"
-			<< setw(11) << right << "----------"
-			<< setw(10) << right << "---------" << std::endl;
+			<< setw(11) << "dec"
+			<< setw(9) << "hex" << std::endl;
+		out << setw(12) << "------------"
+			<< setw(11) << "----------"
+			<< setw(9) << "--------" << std::endl;
 		while (!in.eof()) {
 			in >> number;
 			if (!in.fail()) {
-				out << setw(12) << right << oct << number
-					<< setw(11) << right << dec << number
-					<< setw(10) << right << hex << uppercase << number << endl;
+				out << setw(12) << oct << number
+					<< setw(11) << dec << number
+					<< setw(9) << hex << uppercase << number << endl;
 			}
 			else {
 				in.clear();
@@ -45,7 +45,7 @@ namespace lab2 {
 				in.ignore();
 			}
 		} while (!in.eof());
-		out << setw(5) << "max:"
+		out << setw(5) << left << "max:"
 			<< setw(15) << internal << setprecision(3) << showpos << showpoint << fixed << max << endl;
 	}
 }
