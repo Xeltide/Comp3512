@@ -25,7 +25,7 @@ namespace lab3
 
 	void TimeSheet::AddTime(float timeInHours)
 	{
-		if (mTotalTime + timeInHours <= 10 && mEntries < mMaxEntries)
+		if (timeInHours <= 10 && mEntries < mMaxEntries && timeInHours > 0)
 		{
 			mEntries++;
 			mTotalTime += timeInHours;
