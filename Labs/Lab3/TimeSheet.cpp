@@ -34,7 +34,7 @@ namespace lab3
 
 	float TimeSheet::GetAverageTime() const
 	{
-		float output = 0;
+		float output = 0.0f;
 
 		if (mEntries > 0)
 		{
