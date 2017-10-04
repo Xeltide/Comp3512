@@ -9,9 +9,17 @@ namespace assignment1
 		mContents = new const Item*[10];
 	}
 
+	ShoppingCart::~ShoppingCart() {
+		for (unsigned int i = 0; i < mItemCount; i++)
+		{
+			delete mContents[i];
+		}
+		delete mContents;
+	}
+
 	bool ShoppingCart::AddItem(const Item* item)
 	{
-		if (mItemCount < mMaxCount)
+		if (mItemCount < mMaxCount && item != NULL)
 		{
 			mContents[mItemCount] = item;
 			mItemCount++;
@@ -25,7 +33,7 @@ namespace assignment1
 		if (mItemCount > index)
 		{
 			delete mContents[index];
-			for (int i = index; i < mItemCount - 1; i++)
+			for (unsigned int i = index; i < mItemCount - 1; i++)
 			{
 				mContents[i] = mContents[i + 1];
 			}
@@ -56,7 +64,7 @@ namespace assignment1
 	float ShoppingCart::GetTotal() const
 	{
 		float sum = 0;
-		for (int i = 0; i < mItemCount; i++)
+		for (unsigned int i = 0; i < mItemCount; i++)
 		{
 			sum += mContents[i]->GetCost();
 		}

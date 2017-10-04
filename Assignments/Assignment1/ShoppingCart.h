@@ -17,6 +17,9 @@ namespace assignment1
 
 		float GetTotal() const;
 
+	protected:
+		virtual ~ShoppingCart();
+
 	private:
 		ShoppingCart(const ShoppingCart& other) {}
 

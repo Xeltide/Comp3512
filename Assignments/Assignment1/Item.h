@@ -8,6 +8,7 @@ namespace assignment1
 	{
 	public:
 		Item(const char* name);
+		Item(const Item& other);
 
 		virtual unsigned int GetCost() const = 0;
 		const std::string& GetName() const;

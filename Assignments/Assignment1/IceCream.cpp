@@ -12,6 +12,23 @@ namespace assignment1
 	{
 	}
 
+	IceCream::IceCream(const IceCream& other)
+		: Item(other)
+	{
+		if (((IceCream)other).HasCone())
+		{
+			AddCone();
+		}
+	}
+
+	IceCream::~IceCream()
+	{
+		if (mCone != NULL)
+		{
+			delete mCone;
+		}
+	}
+
 	unsigned int IceCream::GetCost() const
 	{
 		if (mCone != NULL)
@@ -30,5 +47,10 @@ namespace assignment1
 		{
 			mCone = new Cone();
 		}
+	}
+
+	bool IceCream::HasCone()
+	{
+		return mCone != NULL;
 	}
 }

@@ -8,8 +8,14 @@ namespace assignment1
 	{
 	public:
 		Blizzard(const char* name, unsigned int numScoops);
+		Blizzard(const Blizzard& other);
 
 		unsigned int GetCost() const;
+		virtual bool HasCone();
+
+	protected:
+		virtual ~Blizzard();
+
 	private:
 		const unsigned int mToppingCost = 120;
 	};
