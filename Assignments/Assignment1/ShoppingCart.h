@@ -8,6 +8,7 @@ namespace assignment1
 	{
 	public:
 		ShoppingCart();
+		~ShoppingCart();
 
 		bool AddItem(const Item* item);
 		bool RemoveItem(unsigned int index);
@@ -16,9 +17,6 @@ namespace assignment1
 		const Item* operator[](unsigned int index) const;
 
 		float GetTotal() const;
-
-	protected:
-		virtual ~ShoppingCart();
 
 	private:
 		ShoppingCart(const ShoppingCart& other) {}

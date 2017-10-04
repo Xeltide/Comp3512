@@ -8,11 +8,9 @@ namespace assignment1
 	{
 	public:
 		Donut(const char* name, unsigned int count);
+		~Donut();
 
 		unsigned int GetCost() const;
-
-	protected:
-		virtual ~Donut();
 
 	private:
 		unsigned int mCount;
