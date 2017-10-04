@@ -51,6 +51,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -66,6 +70,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Blizzard.h" />
+    <ClInclude Include="Candy.h" />
+    <ClInclude Include="Cone.h" />
+    <ClInclude Include="Donut.h" />
+    <ClInclude Include="IceCream.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="ShoppingCart.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Blizzard.cpp" />
+    <ClCompile Include="Candy.cpp" />
+    <ClCompile Include="Cone.cpp" />
+    <ClCompile Include="Donut.cpp" />
+    <ClCompile Include="IceCream.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ShoppingCart.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
