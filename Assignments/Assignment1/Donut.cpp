@@ -10,6 +10,11 @@ namespace assignment1
 	{
 	}
 
+	Donut::Donut(const Donut& other)
+		: Item(other)
+	{
+	}
+
 	Donut::~Donut() {}
 
 	unsigned int Donut::GetCost() const

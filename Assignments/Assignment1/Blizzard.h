@@ -9,10 +9,9 @@ namespace assignment1
 	public:
 		Blizzard(const char* name, unsigned int numScoops);
 		Blizzard(const Blizzard& other);
-		~Blizzard();
+		virtual ~Blizzard();
 
 		unsigned int GetCost() const;
-		bool HasCone();
 
 	private:
 		const unsigned int mToppingCost = 120;

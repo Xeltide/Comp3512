@@ -22,9 +22,4 @@ namespace assignment1
 	{
 		return IceCream::GetCost() + mToppingCost;
 	}
-
-	bool Blizzard::HasCone()
-	{
-		return IceCream::HasCone();
-	}
 }

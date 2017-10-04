@@ -10,6 +10,11 @@ namespace assignment1
 	{
 	}
 
+	Candy::Candy(const Candy& other)
+		: Item(other)
+	{
+	}
+
 	unsigned int Candy::GetCost() const
 	{
 		return (unsigned int)(mCostPerLb * mWeight);

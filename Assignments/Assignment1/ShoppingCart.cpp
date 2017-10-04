@@ -9,6 +9,13 @@ namespace assignment1
 		mContents = new const Item*[10];
 	}
 
+	ShoppingCart::ShoppingCart(const ShoppingCart& other)
+	{
+		mContents = new const Item*[10];
+
+		memcpy(mContents, other.mContents, 10 * sizeof(Item*));
+	}
+
 	ShoppingCart::~ShoppingCart() {
 		for (unsigned int i = 0; i < mItemCount; i++)
 		{
