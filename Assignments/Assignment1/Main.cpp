@@ -1,6 +1,8 @@
 #include "ShoppingCart.h"
 #include "Donut.h"
 #include "IceCream.h"
+#include "Blizzard.h"
+#include "Candy.h"
 
 #include <iostream>
 
@@ -8,21 +10,21 @@ using namespace std;
 using namespace assignment1;
 int main()
 {
-	ShoppingCart* pCart = new ShoppingCart();
-	
-	Donut* pDonut = new Donut("Old Fashioned", 1);
-	IceCream* pCream = new IceCream("Vanilla", 2);
-	pCream->AddCone();
+	ShoppingCart cart;
 
-	pCart->AddItem(pDonut);
-	pCart->AddItem(pCream);
+	Item* blizzard = new Blizzard("Smarties Blizzard", 3);
+	Item* candy = new Candy("Gummy Bears", 2.5f);
+	Item* donut = new Donut("Canadian Maple", 4);
+	IceCream* icecream = new IceCream("Vanilla", 2);
 
-	cout << pCart->GetTotal() << endl;
-	pCart->RemoveItem(0);
-	cout << pCart->GetItem(0)->GetName() << endl;
-	cout << (*pCart)[0]->GetName() << endl;
-	cout << pCart->GetTotal() << endl;
-	pCart->RemoveItem(0);
+	icecream->AddCone();
+
+	cart.AddItem(blizzard);
+	cart.AddItem(candy);
+	cart.AddItem(donut);
+	cart.AddItem(icecream);
+
+	cout << cart.GetTotal() << endl;
 	system("pause");
 
 	return 0;

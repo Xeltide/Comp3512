@@ -19,6 +19,10 @@ namespace assignment1
 		{
 			AddCone();
 		}
+		else
+		{
+			mCone = NULL;
+		}
 	}
 
 	IceCream::~IceCream()

@@ -10,18 +10,8 @@ namespace assignment1
 		mContents = new const Item*[10];
 	}
 
-	/*ShoppingCart::ShoppingCart(const ShoppingCart& other)
+	ShoppingCart::~ShoppingCart()
 	{
-		mContents = new const Item*[10];
-
-		for (unsigned int i = 0; i < other.mItemCount; i++)
-		{
-			Item* temp = (Item*)malloc(sizeof(Item*))
-			memcpy(const_cast<Item*>(mContents[i]), *other.mContents, sizeof(*other.mContents));
-		}
-	}*/
-
-	ShoppingCart::~ShoppingCart() {
 		for (unsigned int i = 0; i < mItemCount; i++)
 		{
 			delete mContents[i];
