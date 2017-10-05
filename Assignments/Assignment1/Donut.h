@@ -8,8 +8,6 @@ namespace assignment1
 	{
 	public:
 		Donut(const char* name, unsigned int count);
-		Donut(const Donut& other);
-		~Donut();
 
 		unsigned int GetCost() const;
 

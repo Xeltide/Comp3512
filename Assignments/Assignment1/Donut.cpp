@@ -10,13 +10,6 @@ namespace assignment1
 	{
 	}
 
-	Donut::Donut(const Donut& other)
-		: Item(other)
-	{
-	}
-
-	Donut::~Donut() {}
-
 	unsigned int Donut::GetCost() const
 	{
 		return (unsigned int)(mCount / 12.0 * mCostPerDz);

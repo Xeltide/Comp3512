@@ -7,11 +7,6 @@ namespace assignment1
 	{
 	}
 
-	Item::Item(const Item& other)
-		: mName(other.GetName())
-	{
-	}
-
 	Item::~Item()
 	{
 	}

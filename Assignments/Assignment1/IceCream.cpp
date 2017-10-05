@@ -15,7 +15,10 @@ namespace assignment1
 	IceCream::IceCream(const IceCream& other)
 		: Item(other)
 	{
-		memcpy(mCone, other.mCone, sizeof(Cone));
+		if (other.mCone != NULL)
+		{
+			AddCone();
+		}
 	}
 
 	IceCream::~IceCream()

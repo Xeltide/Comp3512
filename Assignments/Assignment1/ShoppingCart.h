@@ -8,8 +8,7 @@ namespace assignment1
 	{
 	public:
 		ShoppingCart();
-		ShoppingCart(const ShoppingCart& other) {}
-		virtual ~ShoppingCart();
+		~ShoppingCart();
 
 		bool AddItem(const Item* item);
 		bool RemoveItem(unsigned int index);
@@ -20,6 +19,8 @@ namespace assignment1
 		float GetTotal() const;
 
 	private:
+		ShoppingCart(const ShoppingCart& other) {}
+
 		unsigned int mItemCount = 0;
 		const Item** mContents;
 		const unsigned int mMaxCount = 10;

@@ -14,10 +14,6 @@ namespace assignment1
 	{
 	}
 
-	Blizzard::~Blizzard()
-	{
-	}
-
 	unsigned int Blizzard::GetCost() const
 	{
 		return IceCream::GetCost() + mToppingCost;

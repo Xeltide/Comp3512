@@ -8,7 +8,6 @@ namespace assignment1
 	{
 	public:
 		Candy(const char* name, float weight);
-		Candy(const Candy& other);
 
 		unsigned int GetCost() const;
 

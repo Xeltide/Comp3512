@@ -1,5 +1,6 @@
 #include "ShoppingCart.h"
 #include "Item.h"
+#include "Donut.h"
 
 #include <iostream>
 namespace assignment1
@@ -9,12 +10,16 @@ namespace assignment1
 		mContents = new const Item*[10];
 	}
 
-	ShoppingCart::ShoppingCart(const ShoppingCart& other)
+	/*ShoppingCart::ShoppingCart(const ShoppingCart& other)
 	{
 		mContents = new const Item*[10];
 
-		memcpy(mContents, other.mContents, 10 * sizeof(Item*));
-	}
+		for (unsigned int i = 0; i < other.mItemCount; i++)
+		{
+			Item* temp = (Item*)malloc(sizeof(Item*))
+			memcpy(const_cast<Item*>(mContents[i]), *other.mContents, sizeof(*other.mContents));
+		}
+	}*/
 
 	ShoppingCart::~ShoppingCart() {
 		for (unsigned int i = 0; i < mItemCount; i++)

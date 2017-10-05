@@ -11,10 +11,12 @@ namespace assignment1
 	public:
 		IceCream(const char* name, unsigned int numScoops);
 		IceCream(const IceCream& other);
-		virtual ~IceCream();
 
 		unsigned int GetCost() const;
 		void AddCone();
+
+	protected:
+		virtual ~IceCream();
 
 	private:
 		Cone* mCone;

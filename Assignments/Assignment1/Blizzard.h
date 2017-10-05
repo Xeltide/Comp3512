@@ -9,7 +9,6 @@ namespace assignment1
 	public:
 		Blizzard(const char* name, unsigned int numScoops);
 		Blizzard(const Blizzard& other);
-		virtual ~Blizzard();
 
 		unsigned int GetCost() const;
 
