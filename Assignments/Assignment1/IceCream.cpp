@@ -14,6 +14,7 @@ namespace assignment1
 
 	IceCream::IceCream(const IceCream& other)
 		: Item(other)
+		, mScoops(other.mScoops)
 	{
 		if (other.mCone != NULL)
 		{

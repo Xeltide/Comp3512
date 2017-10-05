@@ -24,6 +24,10 @@ int main()
 	cart.AddItem(donut);
 	cart.AddItem(icecream);
 
+	cout << cart[0]->GetCost() << endl;
+	cout << cart[1]->GetCost() << endl;
+	cout << cart[2]->GetCost() << endl;
+	cout << cart[3]->GetCost() << endl;
 	cout << cart.GetTotal() << endl;
 	system("pause");
 
