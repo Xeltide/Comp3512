@@ -12,6 +12,6 @@ namespace assignment1
 
 	unsigned int Candy::GetCost() const
 	{
-		return (unsigned int)(mCostPerLb * mWeight);
+		return (unsigned int)round(mCostPerLb * mWeight);
 	}
 }

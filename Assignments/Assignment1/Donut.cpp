@@ -12,6 +12,6 @@ namespace assignment1
 
 	unsigned int Donut::GetCost() const
 	{
-		return (unsigned int)(mCount / 12.0 * mCostPerDz);
+		return (unsigned int)round(mCount / 12.0 * mCostPerDz);
 	}
 }
