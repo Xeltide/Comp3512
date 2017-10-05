@@ -13,7 +13,7 @@ namespace assignment1
 	}
 
 	IceCream::IceCream(const IceCream& other)
-		: Item(other)
+		: Item(other.GetName().c_str())
 		, mScoops(other.mScoops)
 	{
 		if (other.mCone != NULL)
