@@ -16,6 +16,8 @@ int main()
 	Item* candy = new Candy("Gummy Bears", 2.5f);
 	Item* donut = new Donut("Canadian Maple", 4);
 	IceCream* icecream = new IceCream("Vanilla", 2);
+	Item* clone = new Blizzard(*static_cast<Blizzard*>(blizzard));
+	static_cast<Blizzard*>(blizzard)->AddCone();
 
 	icecream->AddCone();
 
@@ -23,6 +25,9 @@ int main()
 	cart.AddItem(candy);
 	cart.AddItem(donut);
 	cart.AddItem(icecream);
+	cart.AddItem(clone);
+
+	cart.RemoveItem(0);
 
 	cout << cart[0]->GetCost() << endl;
 	cout << cart[1]->GetCost() << endl;
