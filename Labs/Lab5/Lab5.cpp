@@ -63,7 +63,7 @@ namespace lab5
 		for (size_t i = 0; i < v.size(); i++)
 		{
 			int counter = 0;
-			for (size_t j = 0; j < v.size(); j++)
+			for (size_t j = i + 1; j < v.size(); j++)
 			{
 				if (v[j] == v[i])
 				{
