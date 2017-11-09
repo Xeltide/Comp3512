@@ -19,7 +19,7 @@ namespace lab6
 
 		const T& Get(unsigned int index) const
 		{
-			return &mArray[index];
+			return mArray[index];
 		}
 
 		T& operator[](unsigned int index)
