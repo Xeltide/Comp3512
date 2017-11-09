@@ -51,7 +51,7 @@ namespace lab6
 
 		bool Add(const T& t)
 		{
-			if (mSize + 1 < mCapacity)
+			if (mSize < mCapacity)
 			{
 				mArray[mSize] = t;
 				mSize++;
