@@ -6,6 +6,7 @@ int main()
 	v1.push_back(1);
 	v1.push_back(2);
 	v1.push_back(3);
+	v1.push_back(1);
 
 	std::vector<char> v2;
 	v2.push_back('a');
@@ -34,7 +35,7 @@ int main()
 	std::vector<int> combinedVector = v1 + v3;
 	std::map<char, int> combinedMap = m1 + m2;
 
-	std::cout << v1 << std::endl;
+	std::cout << combinedVector << std::endl;
 	std::cout << m1 << std::endl;
 	system("pause");
 

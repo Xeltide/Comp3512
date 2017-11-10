@@ -20,7 +20,7 @@ namespace assignment2
 
 		return output;
 	}
-	
+
 	template <typename K, class V>
 	std::vector<K> GetKeys(const std::map<K, V>& m)
 	{
@@ -68,14 +68,17 @@ std::vector<T> operator+(const std::vector<T>& v1, const std::vector<T>& v2)
 
 	for (size_t i = 0; i < v1.size(); ++i)
 	{
-		output.push_back(v1[i]);
+		if (std::find(output.begin(), output.end(), v1[i]) == output.end())
+		{
+			output.push_back(v1[i]);
+		}
 	}
 
-	for (size_t i = 0; i < v2.size(); ++i)
+	for (size_t j = 0; j < v2.size(); ++j)
 	{
-		if (std::find(output.begin(), output.end(), v2[i]) != output.end())
+		if (std::find(output.begin(), output.end(), v2[j]) == output.end())
 		{
-			output.push_back(v2[i]);
+			output.push_back(v2[j]);
 		}
 	}
 
