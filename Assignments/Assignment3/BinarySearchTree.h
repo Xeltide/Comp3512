@@ -82,7 +82,7 @@ namespace assignment3
 			{
 				node = node->Right;
 			}
-			else if (data < *(node->Data))
+			else if (data < * (node->Data))
 			{
 				node = node->Left;
 			}
