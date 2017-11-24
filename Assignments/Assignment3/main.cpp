@@ -16,7 +16,7 @@ int main()
 	//tree.Insert(std::make_unique<int>(20));
 	//tree.Insert(std::make_unique<int>(17));
 	//tree.Insert(std::make_unique<int>(12));
-	
+
 	std::vector<int> v = tree.TraverseInOrder(tree.GetRootNode().lock());
 
 	for (std::vector<int>::iterator it = v.begin(); it != v.end(); ++it)

@@ -213,7 +213,7 @@ namespace assignment3
 					node->Left = left;
 				}
 			}
-			
+
 			return true;
 		}
 
