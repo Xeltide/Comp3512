@@ -64,9 +64,9 @@ namespace lab7
 			}
 
 			// Not root
-			if (current->Previous != nullptr)
+			if (current->Previous.lock() != nullptr)
 			{
-				prev = current->Previous;
+				prev = current->Previous.lock();
 				prev->Next = std::make_shared<Node<T>>(std::move(data));
 				prev->Next->Previous = prev;
 				prev->Next->Next = current;
@@ -103,19 +103,19 @@ namespace lab7
 		{
 			std::shared_ptr<Node<T>> prev;
 			std::shared_ptr<Node<T>> next;
-			if (current->Previous != nullptr && current->Next != nullptr)
+			if (current->Previous.lock() != nullptr && current->Next != nullptr)
 			{
-				prev = current->Previous;
+				prev = current->Previous.lock();
 				next = current->Next;
 				prev->Next = next;
 				next->Previous = prev;
 			}
-			else if (current->Previous != nullptr && current->Next == nullptr)
+			else if (current->Previous.lock() != nullptr && current->Next == nullptr)
 			{
-				prev = current->Previous;
+				prev = current->Previous.lock();
 				prev->Next = nullptr;
 			}
-			else if (current->Previous == nullptr && current->Next != nullptr)
+			else if (current->Previous.lock() == nullptr && current->Next != nullptr)
 			{
 				mRoot = current->Next;
 			}

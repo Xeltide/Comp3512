@@ -13,7 +13,7 @@ namespace lab7
 
 		std::unique_ptr<T> Data;
 		std::shared_ptr<Node<T>> Next;
-		std::shared_ptr<Node<T>> Previous;
+		std::weak_ptr<Node<T>> Previous;
 	};
 
 	template <typename T>
@@ -26,6 +26,7 @@ namespace lab7
 	Node<T>::Node(std::unique_ptr<T> data, std::shared_ptr<Node<T>> prev)
 		: Previous(prev)
 	{
+		prev->Next = this;
 		Data = std::move(data);
 	}
 }
