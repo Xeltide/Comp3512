@@ -117,8 +117,7 @@ namespace lab7
 			}
 			else if (current->Previous == nullptr && current->Next != nullptr)
 			{
-				next = current->Next;
-				mRoot = next;
+				mRoot = current->Next;
 			}
 			mCount--;
 			return true;

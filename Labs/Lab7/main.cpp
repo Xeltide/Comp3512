@@ -15,6 +15,8 @@ int main()
 
 	list.Delete(3);
 	list.Insert(std::make_unique<int>(1), 2);
+	list.Delete(4);
+	list.Delete(1);
 
 	bool bExists = list.Search(1);
 	unsigned int size = list.GetLength();

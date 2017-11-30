@@ -26,7 +26,6 @@ namespace lab7
 	Node<T>::Node(std::unique_ptr<T> data, std::shared_ptr<Node<T>> prev)
 		: Previous(prev)
 	{
-		prev->Next = this;
 		Data = std::move(data);
 	}
 }
