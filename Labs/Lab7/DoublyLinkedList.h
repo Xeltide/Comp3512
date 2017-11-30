@@ -121,6 +121,7 @@ namespace lab7
 				mRoot = next;
 			}
 			mCount--;
+			return true;
 		}
 		else
 		{
