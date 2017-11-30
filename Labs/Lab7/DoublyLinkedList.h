@@ -80,9 +80,16 @@ namespace lab7
 			}
 			mCount++;
 		}
-		else if (index >= mCount)
+		else if (index > mCount)
 		{
 			this->Insert(std::move(data));
+		}
+		else if (index == 0)
+		{
+			std::shared_ptr<Node<T>> temp = mRoot;
+			mRoot = mRoot = std::make_shared<Node<T>>(std::move(data));
+			mRoot->Next = temp;
+			mCount++;
 		}
 	}
 
@@ -101,23 +108,24 @@ namespace lab7
 
 		if (current != nullptr)
 		{
-			std::shared_ptr<Node<T>> prev;
-			std::shared_ptr<Node<T>> next;
-			if (current->Previous.lock() != nullptr && current->Next != nullptr)
+			std::shared_ptr<Node<T>> prev = current->Previous.lock();
+			std::shared_ptr<Node<T>> next = current->Next;
+			if (prev != nullptr && next != nullptr)
 			{
-				prev = current->Previous.lock();
-				next = current->Next;
 				prev->Next = next;
 				next->Previous = prev;
 			}
-			else if (current->Previous.lock() != nullptr && current->Next == nullptr)
+			else if (prev != nullptr && next == nullptr)
 			{
-				prev = current->Previous.lock();
 				prev->Next = nullptr;
 			}
-			else if (current->Previous.lock() == nullptr && current->Next != nullptr)
+			else if (prev == nullptr && next != nullptr)
 			{
 				mRoot = current->Next;
+			}
+			else
+			{
+				mRoot = nullptr;
 			}
 			mCount--;
 			return true;
@@ -154,9 +162,11 @@ namespace lab7
 		if (index < mCount)
 		{
 			std::shared_ptr<Node<T>> current = mRoot;
-			for (unsigned int i = 0; i != mCount; i++)
+			unsigned int i = 0;
+			while (i != index)
 			{
 				current = current->Next;
+				i++;
 			}
 			return current;
 		}
