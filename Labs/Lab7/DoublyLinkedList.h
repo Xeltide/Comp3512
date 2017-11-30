@@ -80,16 +80,19 @@ namespace lab7
 			}
 			mCount++;
 		}
-		else if (index > mCount)
+		else if (index >= mCount)
 		{
-			this->Insert(std::move(data));
-		}
-		else if (index == 0)
-		{
-			std::shared_ptr<Node<T>> temp = mRoot;
-			mRoot = mRoot = std::make_shared<Node<T>>(std::move(data));
-			mRoot->Next = temp;
-			mCount++;
+			if (index == 0)
+			{
+				std::shared_ptr<Node<T>> temp = mRoot;
+				mRoot = mRoot = std::make_shared<Node<T>>(std::move(data));
+				mRoot->Next = temp;
+				mCount++;
+			}
+			else
+			{
+				this->Insert(std::move(data));
+			}
 		}
 	}
 
@@ -144,15 +147,11 @@ namespace lab7
 		{
 			if (*(current->Data) == data)
 			{
-				break;
+				return true;
 			}
 			current = current->Next;
 		}
 
-		if (current != nullptr)
-		{
-			return true;
-		}
 		return false;
 	}
 
