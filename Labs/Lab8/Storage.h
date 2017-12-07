@@ -48,8 +48,18 @@ namespace lab8
 	template <typename T>
 	Storage<T>& Storage<T>::operator=(Storage&& other)
 	{
-		Storage output(std::move(other));
-		return output;
+		if (this != &other)
+		{
+			delete[] mData;
+
+			mData = other.mData;
+			mLength = other.mLength;
+
+			other.mData = nullptr;
+			other.mLength = 0;
+		}
+
+		return *this;
 	}
 
 	template <typename T>
@@ -67,6 +77,6 @@ namespace lab8
 	template <typename T>
 	Storage<T>::~Storage()
 	{
-		delete mData;
+		delete[] mData;
 	}
 }
