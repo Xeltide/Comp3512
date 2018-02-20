@@ -13,6 +13,6 @@ int main()
 
 	std::cout << sheet->GetTotalTime() << std::endl;
 	std::cout << copy->GetTotalTime() << std::endl;
-	system("pause");
+
 	return 0;
 };

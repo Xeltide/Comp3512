@@ -16,7 +16,7 @@ int main()
 	Item* candy = new Candy("Gummy Bears", 2.5f);
 	Item* donut = new Donut("Canadian Maple", 4);
 	IceCream* icecream = new IceCream("Vanilla", 2);
-	Item* clone = new Blizzard(*static_cast<Blizzard*>(blizzard));
+	Item* clone = new Blizzard(blizzard);
 	static_cast<Blizzard*>(blizzard)->AddCone();
 
 	icecream->AddCone();

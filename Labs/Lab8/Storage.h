@@ -32,8 +32,8 @@ namespace lab8
 	Storage<T>::Storage(const Storage& other)
 		: mLength(other.mLength)
 	{
-		mData = new T[other.mLength];
-		memcpy(mData, other.mData, other.mLength);
+		mData = new T[mLength];
+		memcpy(mData, other.mData, mLength * sizeof(T));
 	}
 
 	template <typename T>
